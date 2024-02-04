@@ -3,153 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./styles/style-todo.css" />
   </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #fff;
-    }
-
-    .box {
-      position: relative;
-      width: 450px;
-      height: 550px;
-      background-color: #fbfbfb;
-      border-radius: 30px;
-      padding: 30px 50px;
-    }
-
-    h2 {
-      width: 100%;
-      font-weight: 600;
-      text-align: center;
-      color: black;
-      font-size: 1.75rem;
-    }
-
-    #input {
-      position: relative;
-      width: 100%;
-      margin-top: 25px;
-      border: none;
-      outline: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 1em;
-    }
-
-    .box li {
-      position: relative;
-      width: calc(100% - 40px);
-      display: flex;
-      padding: 10px 10px 10px 45px;
-      align-items: center;
-      background: #f5f3fe;
-      margin: 15px 0;
-      min-height: 45px;
-      cursor: pointer;
-      border-radius: 22.5px;
-    }
-
-    .box li i {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: red;
-      right: -40px;
-      border-radius: 50%;
-    }
-
-    .box li i::before {
-      content: "";
-      position: absolute;
-      width: 15px;
-      height: 2px;
-      background: #fff;
-      transform: rotate(45deg);
-    }
-
-    .box li i::after {
-      content: "";
-      position: absolute;
-      width: 15px;
-      height: 2px;
-      background: #fff;
-      transform: rotate(-45deg);
-    }
-
-    .box li::before {
-      content: "";
-      position: absolute;
-      left: 8px;
-      width: 30px;
-      height: 30px;
-      background: #fff;
-      border-radius: 50%;
-    }
-    .box li.done {
-      background: #fff;
-    }
-
-    .box li.done::after {
-      left: 16px;
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 6px;
-      border-left: 2px solid #232e35;
-      border-bottom: 2px solid #232e35;
-      transform: rotate(315deg);
-    }
-    
-    .box li.done {
-      background: #fff;
-      color: #808080; 
-    }
-
-    .box li.done::after {
-      left: 16px;
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 6px;
-      border-left: 2px solid #808080;
-      border-bottom: 2px solid #808080;
-      transform: rotate(315deg);
-    }
-
-    #list {
-      position: relative;
-      margin-top: 20px;
-      height: 350px;
-      overflow-y: auto;
-      padding-right: 10px;
-    }
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0, 5);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #232e35;
-    }
-
-
-  </style>
   <body>
     <div class="container">
       <div class="box">
@@ -181,9 +37,9 @@
       loadTasks();
     };
 
-    function loadTasks() {
+    loadTasks = () => {
       let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-      list.innerHTML = ""; 
+      list.innerHTML = "";
 
       tasks.forEach(function (task) {
         let listItem = document.createElement("li");
@@ -193,17 +49,17 @@
         listItem.addEventListener("click", function () {
           task.done = !task.done;
           localStorage.setItem("tasks", JSON.stringify(tasks));
-          loadTasks(); 
+          loadTasks();
         });
 
         listItem.querySelector("i").addEventListener("click", function () {
           tasks = tasks.filter((t) => t !== task);
           localStorage.setItem("tasks", JSON.stringify(tasks));
-          loadTasks(); 
+          loadTasks();
         });
 
         list.appendChild(listItem);
       });
-    }
+    };
   </script>
 </html>
