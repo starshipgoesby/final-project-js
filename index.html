@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Mouziki</title>
+  </head>
+  <body>
+    <header>
+      <div class="main-container">
+        <div class="nav">
+          <div class="logo">
+            <a href="">Mouziki</a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="./Portfolio/index.html">Portfolio</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="./todo.html">To Do List</a></li>
+            </ul>
+          </nav>
+
+          <div class="burger">
+            <div class="garis-1"></div>
+            <div class="garis-2"></div>
+            <div class="garis-3"></div>
+          </div>
+        </div>
+
+        <section id="hero">
+            <div class="hero-left">
+                <h3 class="pre-title">Welcome to Mouziki</h3>
+                <h1 class="hero-name">Your <span>Melodic </span>Journey Awaits!</h1>
+                <p>
+                  Dive into the world of online music learning like never before. Mouziki is your gateway to mastering the art of music, whether you're a budding musician or a seasoned pro. Our platform is designed to make your musical dreams a reality, offering a harmonious blend of interactive lessons, cutting-edge technology, and a vibrant community of music enthusiasts
+                </p>
+            </div>
+            <div class="hero-right">
+                <img src="./images/sapiens.svg" alt="">
+                <a href="#" class="order-button" onclick="openPopup()">Order Now</a>
+            </div>
+            <div class="popup" id="orderPopup">
+              <span class="popup-close" onclick="closePopup()">&times;</span>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Item</th>
+                          <th>Month</th>
+                          <th>Price</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Beginner Class</td>
+                          <td>2</td>
+                          <td>Rp 50.000</td>
+                      </tr>
+                      <tr>
+                          <td>Intermediate Class</td>
+                          <td>1</td>
+                          <td>Rp 100.000</td>
+                      </tr>
+                      <tr>
+                        <td>Expert Class</td>
+                        <td>2</td>
+                        <td>Rp 250.000</td>
+                    </tr>
+                    
+                  </tbody>
+                  
+              </table>
+              <a href="#" class="order-button" onclick="openPopup()">Order Now</a>
+          </div>
+          
+          </section>
+      </div>
+
+
+    </header>
+
+    <section id="contactus">
+        
+    </section>
+  </body>
+  <script src="./script/script.js"></script>
+</html>
